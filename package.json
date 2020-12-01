@@ -8,7 +8,8 @@
     "start": "webpack serve --mode development --open --hot"
   },
   "keywords": [
-    "code-challenge", "react"
+    "code-challenge",
+    "react"
   ],
   "author": "Richard Boothe",
   "license": "MIT",
