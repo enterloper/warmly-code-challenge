@@ -2,6 +2,7 @@ import React from "react";
 import DropDownInput from "./Components/DropDownInput";
 import states from "./devData/states.json";
 import zipCodes from "./devData/ATX-zipcodes.json";
+import "./normalize.css";
 import "./styles.css";
 
 console.log(states);

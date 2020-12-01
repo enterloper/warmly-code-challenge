@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { string } from "prop-types";
+import { array, func, string } from "prop-types";
 import findCharacterMatch from "../../helpers/findCharacterMatch";
 import "./dropdown-styles.css";
 
@@ -81,7 +81,10 @@ const DropDownInput = ({ label, placeholder, onHandleChange, options }) => {
 };
 
 DropDownInput.propTypes = {
-  label: string.isRequired
+  placeholder: string,
+  label: string.isRequired,
+  onHandleChange: func,
+  options: array
 };
 DropDownInput.defaultProps = {
   placeholder: "",
