@@ -8,7 +8,7 @@ const DropDownInput = ({ label, placeholder, onHandleChange, options }) => {
   const [optionsList, setOptionsList] = useState(options);
   const [dropdownVisibility, setDropDownVisibility] = useState(false);
   const [listFocus, setListFocus] = useState("");
-
+  // TODO need useEffect for validation on blur (must be an item from the list);
   const handleInputChange = ({ target }) => {
     const { value } = target;
     setInputValue(value);
@@ -33,7 +33,7 @@ const DropDownInput = ({ label, placeholder, onHandleChange, options }) => {
 
   const handleKeyDown = (e) => {
     const { key, target } = e;
-
+    // useRef may be (probably is) best solution here.
     console.log(key);
     if (!listFocus) {
       const listTarget = target.nextSibling.firstChild;
@@ -48,9 +48,10 @@ const DropDownInput = ({ label, placeholder, onHandleChange, options }) => {
   return (
     <div className="drop-down-container">
       <div className="drop-down-clear">
-        <button type="button" onClick={handleClear}>
-          X
-        </button>
+        {!!inputValue.length && <button type="button" onClick={handleClear}>
+            X
+          </button>
+        } 
       </div>
       <label className="drop-down-label" htmlFor={label}>
         {label}
@@ -86,6 +87,7 @@ DropDownInput.propTypes = {
   onHandleChange: func,
   options: array
 };
+
 DropDownInput.defaultProps = {
   placeholder: "",
   onHandleChange: () => {},
