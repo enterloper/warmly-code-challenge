@@ -1,0 +1,10 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+}
+
+.dropdown-section {
+  height: 500px;
+  width: 300px;
+}
